@@ -1,0 +1,51 @@
+Sublime Text Setup Ubuntu
+
+1. Download sublime text 2 dev build (http://www.sublimetext.com/dev)
+
+2. tar xf Sublime\ Text\ 2\ Build\ 2181\ x64.tar.bz2
+
+3. sudo mv Sublime\ Text\ 2 /usr/lib/
+
+4. sudo ln -s /usr/lib/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
+
+5. sudo sublime /usr/share/applications/sublime.desktop 
+
+	- paste in:
+
+		[Desktop Entry]
+		Version=1.0
+		Name=Sublime Text 2
+		# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+		# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+		GenericName=Text Editor
+
+		Exec=sublime
+		Terminal=false
+		Icon=/usr/lib/Sublime Text 2/Icon/48x48/sublime_text.png
+		Type=Application
+		Categories=TextEditor;IDE;Development
+		X-Ayatana-Desktop-Shortcuts=NewWindow
+
+		[NewWindow Shortcut Group]
+		Name=New Window
+		Exec=sublime -n
+		TargetEnvironment=Unity
+
+6. sudo sublime /usr/share/applications/defaults.list
+
+	- replace all occurances of gedit.desktop with sublime.desktop
+
+7. map console shorcut 
+	
+	{ "keys": ["ctrl+back_slash"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }	
+
+8. Install package control
+
+	import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+
+9. Install soda-theme ctrl-shift-p 'install'
+
+10. Activate soda theme adding to user settings:
+
+	"theme": "Soda Dark.sublime-theme"
+
