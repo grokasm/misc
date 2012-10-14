@@ -1,0 +1,39 @@
+JotLeaf Setup
+
+1. Install virtualenv (pip included)
+
+	curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
+
+2. Install pip globally
+	
+	- needs setuptools/distribute
+		curl -O http://python-distribute.org/distribute_setup.py 
+		sudo python distribute_setup.py
+
+	- sudo apt-get install python-pip
+
+3. Install virtualenvwrapper
+
+	sudo pip install virtualenvwrapper
+
+4. Edit .bashrc
+		
+	vim /home/dima/.bashrc and append to the end:
+
+		export WORKON_HOME=$HOME/.virtualenvs
+		export PROJECT_HOME=$HOME/dev
+		source /usr/local/bin/virtualenwrapper.sh
+
+	source /home/dima/.bashrc
+
+5. mkvirtualenv jotleaf
+
+6. mkproject jotleaf
+
+7. workon jotleaf
+
+8. git clone git@github.com:reverie/jotleaf.git
+
+9. sudo apt-get install python-dev
+
+
