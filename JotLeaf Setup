@@ -36,4 +36,15 @@ JotLeaf Setup
 
 9. sudo apt-get install python-dev
 
+10. sudo apt-get install libevent-dev
+
+11. pip install -r requirements.txt
+
+12. cp example_localsettings.py  localsettings.py
+
+13. python manage.py syncdb
+
+14. python manage.py schemamigration --initial
+
+15. python manage.py migrate main
 
